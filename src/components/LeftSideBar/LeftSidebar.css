@@ -1,0 +1,15 @@
+.menu p {
+  font-size: 17px;
+  font-weight: 500;
+  transition: all ease-in-out;
+  color: #454444;
+  padding-top: 2px;
+  text-decoration: none;
+}
+.active__menu p {
+  color: #e61d61;
+  border-right: 3px solid #e61d61;
+}
+.LeftSideContainer {
+  margin-left: 30px;
+}

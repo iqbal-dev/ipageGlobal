@@ -1,0 +1,8 @@
+.navbars {
+  padding-right: 8%;
+}
+.search {
+  background-color: rgba(127, 255, 212, 0.527);
+  border-radius: 15px;
+  padding-left: 40px !important;
+}
