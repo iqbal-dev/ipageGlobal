@@ -13,7 +13,7 @@ const home = () => {
         <Col md={2} className="border-end pe-0">
           <LeftSideBar />
         </Col>
-        <Col md={6}>
+        <Col md={7}>
           <Main />
         </Col>
         <Col md={3}>

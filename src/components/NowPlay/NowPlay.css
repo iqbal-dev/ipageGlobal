@@ -1,0 +1,14 @@
+.more__movie {
+  background-color: rgb(143 133 133 / 57%);
+  z-index: 9999;
+  top: 10px;
+  right: 20px;
+  color: #fff;
+}
+.watch__now {
+  background-color: #df004a;
+  border: none;
+}
+.watch__now:hover {
+  background-color: #940736;
+}
