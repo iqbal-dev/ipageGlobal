@@ -1,3 +1,3 @@
-import Home from "./Home/home.jsx";
+import Home from "./Home/Home.jsx";
 
 export { Home };
