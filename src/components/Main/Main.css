@@ -1,0 +1,20 @@
+.posterAndInfo {
+  height: 400px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.posterAndInfo div div p,
+.posterAndInfo div div h1 {
+  color: rgba(223, 217, 217, 0.959);
+}
+.posterAndInfo div div h5 {
+  color: rgba(255, 255, 255, 0.5);
+}
+.posterAndInfo button {
+  background-color: #df004a;
+  border: none;
+}
+.posterAndInfo button:hover {
+  background-color: #940736;
+}

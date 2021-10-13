@@ -5,23 +5,25 @@ import LeftSideBar from "../../components/LeftSideBar/LeftSideBar";
 import Main from "../../components/Main/Main";
 import RightSidebar from "../../components/RightSideBar/RightSidebar";
 import "./Home.css";
-const home = () => {
+const Home = () => {
   return (
-    <div>
-      <Header />
-      <Row className="home__container justify-content-between">
-        <Col md={2} className="border-end pe-0">
-          <LeftSideBar />
-        </Col>
-        <Col md={6}>
-          <Main />
-        </Col>
-        <Col md={3}>
-          <RightSidebar />
-        </Col>
-      </Row>
-    </div>
+    <>
+      <div>
+        <Header />
+        <Row className="home__container justify-content-between">
+          <Col md={2} className="border-end pe-0">
+            <LeftSideBar />
+          </Col>
+          <Col md={7}>
+            <Main />
+          </Col>
+          <Col md={3}>
+            <RightSidebar />
+          </Col>
+        </Row>
+      </div>
+    </>
   );
 };
 
-export default home;
+export default Home;

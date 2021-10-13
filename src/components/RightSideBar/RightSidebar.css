@@ -1,0 +1,21 @@
+.search {
+  background-color: rgba(127, 255, 212, 0.253);
+  border-radius: 15px;
+  padding-left: 40px !important;
+}
+.right__container {
+  width: 100%;
+}
+.right__container form {
+  width: 80%;
+  margin: 0 auto;
+}
+.right__container button {
+  background-color: #df004b1f;
+  color: #df004a;
+  font-weight: bold;
+  width: 100%;
+}
+.right__container button:hover {
+  background-color: #df004a8e;
+}
