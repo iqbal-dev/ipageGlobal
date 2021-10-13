@@ -32,9 +32,9 @@ const Main = () => {
           <div
             className="posterAndInfo d-flex align-items-center ps-5"
             style={{
-              backgroundImage: `url(${
-                "https://image.tmdb.org/t/p/original" + poster_path
-              })`,
+              backgroundImage: poster_path
+                ? `url(${"https://image.tmdb.org/t/p/original" + poster_path})`
+                : `url("https://i.ibb.co/XCzr55Q/movie1.jpg")`,
             }}
           >
             <div>
