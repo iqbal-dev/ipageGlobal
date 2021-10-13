@@ -5,7 +5,7 @@ import LeftSideBar from "../../components/LeftSideBar/LeftSideBar";
 import Main from "../../components/Main/Main";
 import RightSidebar from "../../components/RightSideBar/RightSidebar";
 import "./Home.css";
-const Home = () => {
+const HomePage = () => {
   return (
     <>
       <div>
@@ -26,4 +26,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;
