@@ -8,7 +8,6 @@ const MovieWithShortDetails = ({ movieData }) => {
   const genre = genres?.filter((value) =>
     movieData?.genre_ids.includes(value.id)
   );
-  console.log(genre);
   //review
   const numberOfReview = (numberOfRating) => {
     const row = [];
