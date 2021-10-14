@@ -1,5 +1,6 @@
 import {
   BANNER,
+  GENRES_LIST,
   NOW_PLAYING,
   POPULAR,
   POPULAR_MOVIES,
@@ -12,6 +13,7 @@ const initialState = {
   popular: {},
   popularMovie: {},
   watchLists: {},
+  genres: {},
   isLoading: true,
 };
 const movieReducer = (state = initialState, action) => {
@@ -37,14 +39,21 @@ const movieReducer = (state = initialState, action) => {
     case POPULAR_MOVIES:
       return {
         ...state,
+        isLoading: false,
         popularMovie: action.payload,
       };
     case WATCHLISTS:
       return {
         ...state,
+        isLoading: false,
         watchLists: action.payload,
       };
-
+    case GENRES_LIST:
+      return {
+        ...state,
+        isLoading: false,
+        genres: action.payload,
+      };
     default:
       return state;
   }

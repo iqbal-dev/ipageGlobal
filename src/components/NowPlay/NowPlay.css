@@ -13,7 +13,7 @@
   background-color: #940736;
 }
 .movie {
-  transition: transform 0.2s;
+  transition: transform 0.4s;
   cursor: pointer;
 }
 .movie:hover {

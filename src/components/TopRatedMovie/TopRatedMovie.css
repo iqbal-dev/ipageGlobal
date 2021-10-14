@@ -1,0 +1,14 @@
+.overview {
+  bottom: 0;
+  transition: all 0.5s;
+  background-color: gray;
+  cursor: pointer;
+}
+.overview:hover {
+  transform: scale(1.1);
+  z-index: 10;
+  display: block;
+}
+.overview:hover .overview .title {
+  background-color: red;
+}

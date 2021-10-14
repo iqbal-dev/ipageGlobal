@@ -3,6 +3,7 @@ import { Button, Form, FormControl } from "react-bootstrap";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  fetchGenresList,
   fetchPopularMovies,
   fetchWatchList,
 } from "../../redux/movie/movieAction";
@@ -15,10 +16,8 @@ const RightSidebar = () => {
   useEffect(() => {
     dispatch(fetchPopularMovies());
     dispatch(fetchWatchList());
+    dispatch(fetchGenresList());
   }, [dispatch]);
-  console.log("====================================");
-  console.log("dhsgfhjsgd");
-  console.log("====================================");
   return (
     <div className="px-4 border-start right__container pb-5">
       <Form className="d-flex position-relative">
@@ -55,4 +54,4 @@ const RightSidebar = () => {
   );
 };
 
-export default React.memo(RightSidebar);
+export default RightSidebar;

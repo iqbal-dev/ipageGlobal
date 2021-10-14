@@ -6,6 +6,7 @@ import {
 import { useDispatch } from "react-redux";
 import Slider from "react-slick";
 import { banner } from "../../redux/movie/movieAction";
+import "./TopRatedMovie.css";
 const TopRatedMovie = ({ popularMovies, isLoading }) => {
   const dispatch = useDispatch();
   var settings = {
@@ -19,7 +20,7 @@ const TopRatedMovie = ({ popularMovies, isLoading }) => {
   return (
     <>
       <div>
-        <div className="d-flex justify-content-between pt-4 pb-3">
+        <div className="d-flex justify-content-between pt-4">
           <h5> Popular </h5>
           <div>
             <button
@@ -40,21 +41,21 @@ const TopRatedMovie = ({ popularMovies, isLoading }) => {
           {popularMovies?.map((data) => (
             <div
               className="position-relative"
-              style={{ cursor: "pointer" }}
+              style={{ cursor: "pointer", width: "95%" }}
               onClick={() => dispatch(banner(data))}
               key={data.id}
             >
               <img
-                className="img-fluid movie"
+                className="img-fluid overview"
                 style={{ width: "95%", height: "300px" }}
                 src={`https://image.tmdb.org/t/p/original${data?.poster_path}`}
                 alt=""
               />
               <div
                 style={{ width: "100%", bottom: "0" }}
-                className="ps-3 position-absolute"
+                className="ps-3 position-absolute "
               >
-                <p className=" py-1 text-white">
+                <p className=" py-1 text-white title">
                   {data.original_title ? data.original_title : data.name}
                 </p>
               </div>

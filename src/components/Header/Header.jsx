@@ -13,6 +13,9 @@ import "./Header.css";
 const Header = () => {
   const dispatch = useDispatch();
   const [status, setStatus] = useState(1);
+  console.log("====================================");
+  console.log("header");
+  console.log("====================================");
   return (
     <Navbar bg="white" expand="lg">
       <Container fluid className="ms-3">

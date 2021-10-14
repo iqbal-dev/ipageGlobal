@@ -12,17 +12,16 @@ import TopRatedMovie from "../TopRatedMovie/TopRatedMovie";
 import "./Main.css";
 const Main = () => {
   const dispatch = useDispatch();
+  const latestMovie = useSelector((state) => state.movie);
+  const { poster_path, original_title, genres, name, genre_ids } =
+    latestMovie?.latestMovie;
+  const allGenres = useSelector((state) => state.movie.genres.genres);
+  const genre = allGenres?.filter((value) => genre_ids?.includes(value.id));
   useEffect(() => {
     dispatch(fetchBannerMovie());
     dispatch(fetchNowPlayMovie());
     dispatch(fetchPopularMovie());
   }, [dispatch]);
-  const latestMovie = useSelector((state) => state.movie);
-  const { poster_path, original_title, genres, name } =
-    latestMovie?.latestMovie;
-  console.log("====================================");
-  console.log("main");
-  console.log("====================================");
   return (
     <>
       {latestMovie.isLoading ? (
@@ -45,7 +44,15 @@ const Main = () => {
                   {original_title ? original_title : name}
                 </h1>
                 <h5 className="my-4">
-                  {genres?.map((data) => data.title + " ,")}
+                  {genres
+                    ? genres?.map(
+                        (data, i) =>
+                          data.name + (i + 1 === genres.length ? "" : " ,")
+                      )
+                    : genre?.map(
+                        (data, i) =>
+                          data.name + (i + 1 === genre.length ? "" : ", ")
+                      )}
                 </h5>
               </div>
               <div className="d-flex align-items-center ">
@@ -70,4 +77,4 @@ const Main = () => {
   );
 };
 
-export default React.memo(Main);
+export default Main;

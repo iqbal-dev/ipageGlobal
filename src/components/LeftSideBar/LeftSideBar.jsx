@@ -19,6 +19,9 @@ import {
 import { NavLink } from "react-router-dom";
 import "./LeftSidebar.css";
 const LeftSideBar = () => {
+  console.log("====================================");
+  console.log("leftSidebar");
+  console.log("====================================");
   return (
     <div className="LeftSideContainer">
       <div className="my-3 mx-1 text-uppercase fw-bold text-black-50">Menu</div>
