@@ -6,7 +6,6 @@ import {
 import { useDispatch } from "react-redux";
 import Slider from "react-slick";
 import { banner } from "../../redux/movie/movieAction";
-
 const TopRatedMovie = ({ popularMovies, isLoading }) => {
   const dispatch = useDispatch();
   var settings = {
