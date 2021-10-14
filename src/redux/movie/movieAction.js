@@ -1,5 +1,11 @@
 import axios from "axios";
-import { BANNER, NOW_PLAYING, POPULAR } from "./movieActionType";
+import {
+  BANNER,
+  NOW_PLAYING,
+  POPULAR,
+  POPULAR_MOVIES,
+  WATCHLISTS,
+} from "./movieActionType";
 
 export function banner(data) {
   return {
@@ -16,6 +22,18 @@ function nowPlaying(data) {
 function popular(data) {
   return {
     type: POPULAR,
+    payload: data,
+  };
+}
+function popularMovies(data) {
+  return {
+    type: POPULAR_MOVIES,
+    payload: data,
+  };
+}
+function watchLists(data) {
+  return {
+    type: WATCHLISTS,
     payload: data,
   };
 }
@@ -90,6 +108,28 @@ export const fetchPopularTvShow = () => {
           ...res.data,
         })
       );
+    } catch (error) {}
+  };
+};
+
+export const fetchPopularMovies = () => {
+  return async (dispatch) => {
+    try {
+      const res = await axios.get(
+        `https://api.themoviedb.org/3/movie/popular?api_key=ad0be07569d74653968f36ba64e647c6&language=en-US&page=1`
+      );
+      dispatch(popularMovies(res.data));
+    } catch (error) {}
+  };
+};
+
+export const fetchWatchList = () => {
+  return async (dispatch) => {
+    try {
+      const res = await axios.get(
+        `https://api.themoviedb.org/3/tv/popular?api_key=ad0be07569d74653968f36ba64e647c6&language=en-US&page=1`
+      );
+      dispatch(watchLists(res.data));
     } catch (error) {}
   };
 };

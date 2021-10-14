@@ -42,11 +42,12 @@ const NowPlay = ({ nowPlay, isLoading }) => {
         <Slider ref={slider} {...settings}>
           {nowPlay?.map((data) => (
             <div
-              className="position-relative"
+              className="position-relative "
               onClick={() => dispatch(banner(data))}
+              key={data.id}
             >
               <img
-                className="img-fluid"
+                className="img-fluid movie"
                 style={{ width: "95%", height: "300px" }}
                 src={`https://image.tmdb.org/t/p/original${data?.poster_path}`}
                 alt=""

@@ -12,3 +12,11 @@
 .watch__now:hover {
   background-color: #940736;
 }
+.movie {
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.movie:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}

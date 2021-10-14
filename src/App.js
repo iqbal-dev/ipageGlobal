@@ -1,8 +1,8 @@
-import Home from "./Pages/Home/Home";
+import { Home } from "./Pages";
 
 function App() {
   return (
-    <div>
+    <div className="pb-5">
       <Home />
     </div>
   );
