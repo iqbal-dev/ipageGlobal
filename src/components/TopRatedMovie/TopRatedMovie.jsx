@@ -20,7 +20,7 @@ const TopRatedMovie = ({ popularMovies, isLoading }) => {
   return (
     <>
       <div>
-        <div className="d-flex justify-content-between pt-4">
+        <div className="d-flex justify-content-between pt-4 ">
           <h5> Popular </h5>
           <div>
             <button

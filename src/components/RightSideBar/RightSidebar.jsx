@@ -4,8 +4,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchGenresList,
-  fetchPopularMovies,
-  fetchWatchList,
+  fetchPopularTvShow,
 } from "../../redux/movie/movieAction";
 import MovieWithShortDetails from "../MovieWithShortDetails/MovieWithShortDetails";
 import "./RightSidebar.css";
@@ -14,9 +13,8 @@ const RightSidebar = () => {
 
   const results = useSelector((state) => state.movie);
   useEffect(() => {
-    dispatch(fetchPopularMovies());
-    dispatch(fetchWatchList());
     dispatch(fetchGenresList());
+    dispatch(fetchPopularTvShow());
   }, [dispatch]);
   return (
     <div className="px-4 border-start right__container pb-5">

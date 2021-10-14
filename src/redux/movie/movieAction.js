@@ -54,7 +54,7 @@ export const fetchBannerMovie = () => {
     } catch (error) {}
   };
 };
-export const fetchBannerTvShow = () => {
+export const fetchBannerTvShow = (click = "") => {
   return async (dispatch) => {
     try {
       const res =
@@ -72,10 +72,14 @@ export const fetchBannerTvShow = () => {
 };
 export const fetchNowPlayMovie = () => {
   return async (dispatch) => {
-    const res = await axios.get(
-      `https://api.themoviedb.org/3/movie/now_playing?api_key=ad0be07569d74653968f36ba64e647c6&language=en-US&page=1`
-    );
-    dispatch(nowPlaying(res.data));
+    try {
+      const res = await axios.get(
+        `https://api.themoviedb.org/3/movie/now_playing?api_key=ad0be07569d74653968f36ba64e647c6&language=en-US&page=1`
+      );
+      dispatch(nowPlaying(res.data));
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 };
 export const fetchNowPlayTvShow = () => {
@@ -99,6 +103,7 @@ export const fetchPopularMovie = () => {
         `https://api.themoviedb.org/3/movie/popular?api_key=ad0be07569d74653968f36ba64e647c6&language=en-US&page=1`
       );
       dispatch(popular(res.data));
+      dispatch(popularMovies(res.data));
     } catch (error) {
       console.log(error.message);
     }
@@ -116,31 +121,6 @@ export const fetchPopularTvShow = () => {
           poster_path: res.data.poster_path,
           ...res.data,
         })
-      );
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-};
-
-export const fetchPopularMovies = () => {
-  return async (dispatch) => {
-    try {
-      const res = await axios.get(
-        `https://api.themoviedb.org/3/movie/popular?api_key=ad0be07569d74653968f36ba64e647c6&language=en-US&page=1`
-      );
-      dispatch(popularMovies(res.data));
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-};
-
-export const fetchWatchList = () => {
-  return async (dispatch) => {
-    try {
-      const res = await axios.get(
-        `https://api.themoviedb.org/3/tv/popular?api_key=ad0be07569d74653968f36ba64e647c6&language=en-US&page=1`
       );
       dispatch(watchLists(res.data));
     } catch (error) {

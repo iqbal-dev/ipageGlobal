@@ -3,13 +3,16 @@
   width: 100%;
   background-size: cover;
   background-position: center;
+  cursor: pointer;
 }
 .posterAndInfo div div p,
 .posterAndInfo div div h1 {
   color: rgba(223, 217, 217, 0.959);
+  transition: all 0.5s;
 }
 .posterAndInfo div div h5 {
   color: rgba(255, 255, 255, 0.5);
+  transition: all 0.5s;
 }
 .posterAndInfo button {
   background-color: #df004a;
@@ -17,4 +20,9 @@
 }
 .posterAndInfo button:hover {
   background-color: #940736;
+}
+.posterAndInfo:hover h1,
+.posterAndInfo:hover h5 {
+  color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
 }
