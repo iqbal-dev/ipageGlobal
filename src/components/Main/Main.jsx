@@ -18,9 +18,11 @@ const Main = () => {
     dispatch(fetchPopularMovie());
   }, [dispatch]);
   const latestMovie = useSelector((state) => state.movie);
-  console.log(latestMovie);
   const { poster_path, original_title, genres, name } =
     latestMovie?.latestMovie;
+  console.log("====================================");
+  console.log("main");
+  console.log("====================================");
   return (
     <>
       {latestMovie.isLoading ? (
@@ -68,4 +70,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default React.memo(Main);

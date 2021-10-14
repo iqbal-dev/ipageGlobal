@@ -42,9 +42,10 @@ const TopRatedMovie = ({ popularMovies, isLoading }) => {
               className="position-relative"
               style={{ cursor: "pointer" }}
               onClick={() => dispatch(banner(data))}
+              key={data.id}
             >
               <img
-                className="img-fluid"
+                className="img-fluid movie"
                 style={{ width: "95%", height: "300px" }}
                 src={`https://image.tmdb.org/t/p/original${data?.poster_path}`}
                 alt=""
