@@ -40,36 +40,38 @@ const NowPlay = ({ nowPlay, isLoading }) => {
           </div>
         </div>
         <Slider ref={slider} {...settings}>
-          {nowPlay?.map((data) => (
-            <div
-              className="position-relative "
-              onClick={() => dispatch(banner(data))}
-              key={data.id}
-            >
-              <img
-                className="img-fluid movie"
-                style={{ width: "95%", height: "300px" }}
-                src={`https://image.tmdb.org/t/p/original${data?.poster_path}`}
-                alt=""
-              />
-              <p className="p-2 m-0 fs-5 position-absolute more__movie">
-                <AiOutlinePlus className="fw-bold" size="1.6rem" />
-              </p>
+          {nowPlay
+            ?.filter((value, i) => i < 12)
+            ?.map((data) => (
               <div
-                style={{ width: "100%", bottom: "10px" }}
-                className="d-flex justify-content-center position-absolute"
+                className="position-relative "
+                onClick={() => dispatch(banner(data))}
+                key={data.id}
               >
-                <Button
-                  style={{
-                    width: "80%",
-                  }}
-                  className=" py-2 fw-bold watch__now"
+                <img
+                  className="img-fluid movie"
+                  style={{ width: "95%", height: "300px" }}
+                  src={`https://image.tmdb.org/t/p/original${data?.poster_path}`}
+                  alt=""
+                />
+                <p className="p-2 m-0 fs-5 position-absolute more__movie">
+                  <AiOutlinePlus className="fw-bold" size="1.6rem" />
+                </p>
+                <div
+                  style={{ width: "100%", bottom: "10px" }}
+                  className="d-flex justify-content-center position-absolute"
                 >
-                  Watch Now
-                </Button>
+                  <Button
+                    style={{
+                      width: "80%",
+                    }}
+                    className=" py-2 fw-bold watch__now"
+                  >
+                    Watch Now
+                  </Button>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </Slider>
       </div>
     </>

@@ -38,29 +38,31 @@ const TopRatedMovie = ({ popularMovies, isLoading }) => {
           </div>
         </div>
         <Slider ref={slider} {...settings}>
-          {popularMovies?.map((data) => (
-            <div
-              className="position-relative"
-              style={{ cursor: "pointer", width: "95%" }}
-              onClick={() => dispatch(banner(data))}
-              key={data.id}
-            >
-              <img
-                className="img-fluid overview"
-                style={{ width: "95%", height: "300px" }}
-                src={`https://image.tmdb.org/t/p/original${data?.poster_path}`}
-                alt=""
-              />
+          {popularMovies
+            ?.filter((value, i) => i < 12)
+            ?.map((data) => (
               <div
-                style={{ width: "100%", bottom: "0" }}
-                className="ps-3 position-absolute "
+                className="position-relative"
+                style={{ cursor: "pointer", width: "95%" }}
+                onClick={() => dispatch(banner(data))}
+                key={data.id}
               >
-                <p className=" py-1 text-white title">
-                  {data.original_title ? data.original_title : data.name}
-                </p>
+                <img
+                  className="img-fluid overview"
+                  style={{ width: "95%", height: "300px" }}
+                  src={`https://image.tmdb.org/t/p/original${data?.poster_path}`}
+                  alt=""
+                />
+                <div
+                  style={{ width: "100%", bottom: "0" }}
+                  className="ps-3 position-absolute "
+                >
+                  <p className=" py-1 text-white title">
+                    {data.original_title ? data.original_title : data.name}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </Slider>
       </div>
     </>
